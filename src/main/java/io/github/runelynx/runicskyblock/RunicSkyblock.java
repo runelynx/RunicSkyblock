@@ -84,18 +84,18 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 			p.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.ITALIC + "...starting up RunicSkyblock plugin...");
 		}
 
-		rankColors.put("Skypirate", ChatColor.DARK_GRAY);
-		rankColors.put("Swabbie", ChatColor.GREEN);
-		rankColors.put("Scallywag", ChatColor.DARK_GREEN);
-		rankColors.put("Striker", ChatColor.YELLOW);
-		rankColors.put("PowderMonkey", ChatColor.GOLD);
-		rankColors.put("Navigator", ChatColor.AQUA);
-		rankColors.put("Gunner", ChatColor.DARK_AQUA);
-		rankColors.put("Swashbuckler", ChatColor.BLUE);
-		rankColors.put("FirstMate", ChatColor.LIGHT_PURPLE);
-		rankColors.put("QuarterMaster", ChatColor.DARK_PURPLE);
-		rankColors.put("Quartermaster", ChatColor.DARK_PURPLE);
-		rankColors.put("Captain", ChatColor.RED);
+		rankColors.put("skypirate", ChatColor.DARK_GRAY);
+		rankColors.put("swabbie", ChatColor.GREEN);
+		rankColors.put("scallywag", ChatColor.DARK_GREEN);
+		rankColors.put("striker", ChatColor.YELLOW);
+		rankColors.put("powdermonkey", ChatColor.GOLD);
+		rankColors.put("navigator", ChatColor.AQUA);
+		rankColors.put("gunner", ChatColor.DARK_AQUA);
+		rankColors.put("swashbuckler", ChatColor.BLUE);
+		rankColors.put("firstmate", ChatColor.LIGHT_PURPLE);
+		rankColors.put("quartermaster", ChatColor.DARK_PURPLE);
+		rankColors.put("quartermaster", ChatColor.DARK_PURPLE);
+		rankColors.put("captain", ChatColor.RED);
 
 		Bukkit.getLogger().log(Level.INFO, "RunicSkyblock plugin is loaded!");
 
@@ -129,7 +129,7 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 	// When player breaks a block:
 	public void onBlockBreak(BlockBreakEvent event) {
 		// if Block is a leaf Block and Player's held item
-		if (event.getBlock().getType().equals(Material.LEAVES)) {
+		if (event.getBlock().getType().equals(Material.OAK_LEAVES) || event.getBlock().getType().equals(Material.DARK_OAK_LEAVES)) {
 
 			int randomNumber = 1 + (int)(Math.random() * 100); 
 
@@ -322,10 +322,18 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 							+ ChatColor.WHITE + " but there is no color associated to that. Notify Rune!");
 		}
 
-		event.setFormat(staffPrefix + RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event.getPlayer()))
-				+ perms.getPrimaryGroup(event.getPlayer()) + ChatColor.GRAY + " "
-				+ RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event.getPlayer()))
-				+ event.getPlayer().getDisplayName() + ChatColor.WHITE + ": %2$s");
+		//Capitalize
+		String groupName = perms.getPrimaryGroup(event.getPlayer()).substring(0, 1).toUpperCase() + perms.getPrimaryGroup(event.getPlayer()).substring(1);
+
+		event.setFormat(staffPrefix
+				+ RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event
+				.getPlayer()).toLowerCase())
+				+ groupName
+				+ ChatColor.GRAY
+				+ " "
+				+ RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event
+				.getPlayer()).toLowerCase()) + event.getPlayer().getDisplayName()
+				+ ChatColor.WHITE + ": %2$s");
 
 	}
 
@@ -368,41 +376,41 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 		treeLore.add(ChatColor.YELLOW + "You must find the relevant portal");
 		treeLore.add(ChatColor.YELLOW + "near Astrid to unlock it here, though.");
 
-		ItemStack tree = new ItemStack(Material.SAPLING, 1, (short) 3);
+		ItemStack tree = new ItemStack(Material.BIRCH_SAPLING, 1, (short) 3);
 		meta = tree.getItemMeta();
 		meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Astrid Warp Menu");
 		meta.setLore(treeLore);
 		tree.setItemMeta(meta);
 
-		ItemStack flower1 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower1 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower1.getItemMeta();
 		meta.setDisplayName("");
 		flower1.setItemMeta(meta);
-		ItemStack flower2 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower2 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower2.getItemMeta();
 		meta.setDisplayName("");
 		flower2.setItemMeta(meta);
-		ItemStack flower3 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower3 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower3.getItemMeta();
 		meta.setDisplayName("");
 		flower3.setItemMeta(meta);
-		ItemStack flower4 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower4 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower4.getItemMeta();
 		meta.setDisplayName("");
 		flower4.setItemMeta(meta);
-		ItemStack flower5 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower5 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower5.getItemMeta();
 		meta.setDisplayName("");
 		flower5.setItemMeta(meta);
-		ItemStack flower6 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower6 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower6.getItemMeta();
 		meta.setDisplayName("");
 		flower6.setItemMeta(meta);
-		ItemStack flower7 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower7 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower7.getItemMeta();
 		meta.setDisplayName("");
 		flower7.setItemMeta(meta);
-		ItemStack flower8 = new ItemStack(Material.RED_ROSE, 1, (short) random.nextInt(8 + 1));
+		ItemStack flower8 = new ItemStack(Material.ROSE_BUSH, 1, (short) random.nextInt(8 + 1));
 		meta = flower8.getItemMeta();
 		meta.setDisplayName("");
 		flower8.setItemMeta(meta);
@@ -422,13 +430,13 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 
 		if (p.hasPermission("ru.astrid.survival")) {
 
-			survivalIcon = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 5);
+			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1, (short) 5);
 
 			meta = survivalIcon.getItemMeta();
 			meta.setDisplayName("Warp to Survival");
 			survivalIcon.setItemMeta(meta);
 		} else {
-			survivalIcon = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1, (short) 15);
 
 			ArrayList<String> survivalIconLore = new ArrayList<String>();
 			survivalIconLore.add(ChatColor.RED + "Find the portal to the survival world");
@@ -441,13 +449,13 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 		}
 
 		if (p.hasPermission("ru.astrid.skyblock")) {
-			skyblockIcon = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 3);
+			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1, (short) 3);
 
 			meta = skyblockIcon.getItemMeta();
 			meta.setDisplayName("Warp to Skyblock");
 			skyblockIcon.setItemMeta(meta);
 		} else {
-			skyblockIcon = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1, (short) 15);
 
 			ArrayList<String> skyblockIconLore = new ArrayList<String>();
 			skyblockIconLore.add(ChatColor.RED + "Find the portal to the skyblock world");

@@ -35,7 +35,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import com.connorlinfoot.titleapi.TitleAPI;
+import titleapi.TitleAPI;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import com.wasteofplastic.askyblock.ASkyBlockAPI;

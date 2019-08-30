@@ -1,4 +1,4 @@
-package com.connorlinfoot.titleapi;
+package titleapi;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
