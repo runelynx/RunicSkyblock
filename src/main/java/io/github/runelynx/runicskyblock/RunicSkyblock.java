@@ -22,10 +22,13 @@ import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -209,6 +212,16 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 		}, 60);
 	}
 
+	@EventHandler(priority = EventPriority.HIGH)
+	public void onCreatureSpawn(CreatureSpawnEvent event) {
+
+		if (event.getEntity().getType() == EntityType.PHANTOM) {
+			event.setCancelled(true);
+		}
+
+	}
+
+
 	@EventHandler
 	public void onPlayerQuit(final PlayerQuitEvent pqe) {
 
@@ -324,15 +337,16 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 
 		//Capitalize
 		String groupName = perms.getPrimaryGroup(event.getPlayer()).substring(0, 1).toUpperCase() + perms.getPrimaryGroup(event.getPlayer()).substring(1);
+		if (groupName.equalsIgnoreCase("default")) {
+			groupName = "Swabbie";
+		}
 
 		event.setFormat(staffPrefix
-				+ RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event
-				.getPlayer()).toLowerCase())
+				+ RunicSkyblock.rankColors.get(groupName.toLowerCase())
 				+ groupName
 				+ ChatColor.GRAY
 				+ " "
-				+ RunicSkyblock.rankColors.get(perms.getPrimaryGroup(event
-				.getPlayer()).toLowerCase()) + event.getPlayer().getDisplayName()
+				+ RunicSkyblock.rankColors.get(groupName.toLowerCase()) + event.getPlayer().getDisplayName()
 				+ ChatColor.WHITE + ": %2$s");
 
 	}
@@ -532,7 +546,7 @@ public class RunicSkyblock extends JavaPlugin implements PluginMessageListener, 
 				// /////////////////////
 				PreparedStatement dStmt = dbConn.prepareStatement(
 						"INSERT INTO rp_PlayerInfo (`PlayerName`, `UUID`, `ActiveFaith`, `LastIP`, `FirstSeen`, `FirstSeenSB`, `LastSeen`) VALUES "
-								+ "(?, ?, ?, ?, ?, ?);");
+								+ "(?, ?, ?, ?, ?, ?, ?);");
 				dStmt.setString(1, playerName);
 				dStmt.setString(2, playerUUID.toString());
 				dStmt.setString(3, "Sun");

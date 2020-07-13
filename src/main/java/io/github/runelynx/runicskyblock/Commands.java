@@ -168,10 +168,10 @@ public class Commands implements CommandExecutor {
 			
 			
 
-			if (RunicSkyblock.perms.playerInGroup(p, "Captain")) {
+			if (p.hasPermission("rp.captain")) {
 				p.sendMessage(ChatColor.DARK_AQUA
 						+ "Avast, captain! Thar be no more ranks for you to climb!");
-			} else if (RunicSkyblock.perms.playerInGroup(p, "QuarterMaster")) {
+			} else if (p.hasPermission("rp.quartermaster")) {
 				// //////////////////////////////
 				// QUARTERMASTER TO CAPTAIN
 				// ////////////////////////////
@@ -218,14 +218,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Captain");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"QuarterMaster");
 					congratsPromotion(p.getDisplayName(), "Captain");
 					logPromotion(p.getName(), "Captain", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "FirstMate")) {
+			} else if (p.hasPermission("rp.firstmate")) {
 				// //////////////////////////////
 				// FIRSTMATE TO QUARTERMASTER
 				// ////////////////////////////
@@ -269,14 +269,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"QuarterMaster");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"FirstMate");
 					congratsPromotion(p.getDisplayName(), "QuarterMaster");
 					logPromotion(p.getName(), "QuarterMaster", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Swashbuckler")) {
+			} else if (p.hasPermission("rp.swashbuckler")) {
 				// //////////////////////////////
 				// SWASHBUCKLER TO FIRSTMATE
 				// ////////////////////////////
@@ -320,14 +320,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"FirstMate");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Swashbuckler");
 					congratsPromotion(p.getDisplayName(), "FirstMate");
 					logPromotion(p.getName(), "FirstMate", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Gunner")) {
+			} else if (p.hasPermission("rp.gunner")) {
 				// //////////////////////////////
 				// GUNNER TO SWASHBUCKLER
 				// ////////////////////////////
@@ -371,14 +371,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Swashbuckler");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Gunner");
 					congratsPromotion(p.getDisplayName(), "Swashbuckler");
 					logPromotion(p.getName(), "Swashbuckler", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Navigator")) {
+			} else if (p.hasPermission("rp.navigator")) {
 				// //////////////////////////////
 				// Navigator to Gunner
 				// ////////////////////////////
@@ -422,14 +422,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Gunner");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Navigator");
 					congratsPromotion(p.getDisplayName(), "Gunner");
 					logPromotion(p.getName(), "Gunner", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "PowderMonkey")) {
+			} else if (p.hasPermission("rp.powdermonkey")) {
 				// //////////////////////////////
 				// POWDERMONKEY TO NAVIGATOR
 				// ////////////////////////////
@@ -473,14 +473,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Navigator");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"PowderMonkey");
 					congratsPromotion(p.getDisplayName(), "Navigator");
 					logPromotion(p.getName(), "Navigator", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Striker")) {
+			} else if (p.hasPermission("rp.striker")) {
 				// //////////////////////////////
 				// STRIKER TO POWDERMONKEY
 				// ////////////////////////////
@@ -524,15 +524,15 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"PowderMonkey");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Striker");
 					congratsPromotion(p.getDisplayName(), "PowderMonkey");
 					logPromotion(p.getName(), "PowderMonkey", new Date().getTime());
 				}
 
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Scallywag")) {
+			} else if (p.hasPermission("rp.scallywag")) {
 				// //////////////////////////////
 				// SCALLYWAG TO STRIKER
 				// ////////////////////////////
@@ -571,14 +571,14 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Striker");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Scallywag");
 					congratsPromotion(p.getDisplayName(), "Striker");
 					logPromotion(p.getName(), "Striker", new Date().getTime());
 				}
-			} else if (RunicSkyblock.perms.playerInGroup(p, "Swabbie")) {
+			} else if (p.hasPermission("rp.swabbie")) {
 				// //////////////////////////////
 				// SWABBIE TO SCALLYWAG
 				// ////////////////////////////
@@ -596,9 +596,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerAddGroup("", p,
 							"Scallywag");
-					RunicSkyblock.perms.playerRemoveGroup("ASkyBlock", p,
+					RunicSkyblock.perms.playerRemoveGroup("", p,
 							"Swabbie");
 					congratsPromotion(p.getDisplayName(), "Scallywag");
 					logPromotion(p.getName(), "Scallywag", new Date().getTime());

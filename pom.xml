@@ -5,26 +5,18 @@
 	<artifactId>RunicSkyblock</artifactId>
 	<version>1.0</version>
 
-
-
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>bukkit</artifactId>
-			<version>1.14.4-R0.1-SNAPSHOT</version>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>1.16.1-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.milkbowl.vault</groupId>
 			<artifactId>VaultAPI</artifactId>
-			<version>1.5</version>
-			<scope>provided</scope>
+			<version>1.6</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>com.wasteofplastic</groupId>
@@ -118,38 +110,38 @@
 
 	<repositories>
 		<repository>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
 			<id>bintray-tastybento-maven-repo</id>
 			<name>tastybento-askyblock</name>
 			<url>https://dl.bintray.com/tastybento/maven-repo/</url>
 		</repository>
 		<repository>
-			<id>spigot-repo</id>
-			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-		</repository>
-		<repository>
 			<id>dmulloy2-repo</id>
 			<url>http://repo.dmulloy2.net/content/groups/public/</url>
 		</repository>
-		<repository>
-			<id>libs-disguises</id>
-			<url>http://server.psmc.ca/repo/</url>
-		</repository>
-		<repository>
-			<id>bukkit-repo</id>
-			<url>http://repo.bukkit.org/content/groups/public/</url>
-		</repository>
+<!--		<repository>-->
+<!--			<id>libs-disguises</id>-->
+<!--			<url>http://server.psmc.ca/repo/</url>-->
+<!--		</repository>-->
+<!--		<repository>-->
+<!--			<id>bukkit-repo</id>-->
+<!--			<url>http://repo.bukkit.org/content/groups/public/</url>-->
+<!--		</repository>-->
 		<repository>
 			<id>vault-repo</id>
 			<url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
 		</repository>
-		<repository>
-			<id>my-local-repo</id>
-			<url>file://C:/Users/Andrew/.m2/repository</url>
-		</repository>
-		<repository>
-			<id>elmakers-repo</id>
-			<url>http://maven.elmakers.com/repository/</url>
-		</repository>
+<!--		<repository>-->
+<!--			<id>my-local-repo</id>-->
+<!--			<url>file://C:/Users/Andrew/.m2/repository</url>-->
+<!--		</repository>-->
+<!--		<repository>-->
+<!--			<id>elmakers-repo</id>-->
+<!--			<url>http://maven.elmakers.com/repository/</url>-->
+<!--		</repository>-->
 		<repository>
 			<snapshots>
 				<enabled>true</enabled>
