@@ -218,9 +218,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Captain");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"QuarterMaster");
 					congratsPromotion(p.getDisplayName(), "Captain");
 					logPromotion(p.getName(), "Captain", new Date().getTime());
@@ -269,9 +269,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"QuarterMaster");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"FirstMate");
 					congratsPromotion(p.getDisplayName(), "QuarterMaster");
 					logPromotion(p.getName(), "QuarterMaster", new Date().getTime());
@@ -320,9 +320,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"FirstMate");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Swashbuckler");
 					congratsPromotion(p.getDisplayName(), "FirstMate");
 					logPromotion(p.getName(), "FirstMate", new Date().getTime());
@@ -371,9 +371,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Swashbuckler");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Gunner");
 					congratsPromotion(p.getDisplayName(), "Swashbuckler");
 					logPromotion(p.getName(), "Swashbuckler", new Date().getTime());
@@ -422,9 +422,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Gunner");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Navigator");
 					congratsPromotion(p.getDisplayName(), "Gunner");
 					logPromotion(p.getName(), "Gunner", new Date().getTime());
@@ -473,9 +473,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Navigator");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"PowderMonkey");
 					congratsPromotion(p.getDisplayName(), "Navigator");
 					logPromotion(p.getName(), "Navigator", new Date().getTime());
@@ -524,9 +524,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"PowderMonkey");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Striker");
 					congratsPromotion(p.getDisplayName(), "PowderMonkey");
 					logPromotion(p.getName(), "PowderMonkey", new Date().getTime());
@@ -571,9 +571,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Striker");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Scallywag");
 					congratsPromotion(p.getDisplayName(), "Striker");
 					logPromotion(p.getName(), "Striker", new Date().getTime());
@@ -596,9 +596,9 @@ public class Commands implements CommandExecutor {
 				}
 
 				if (!problems) {
-					RunicSkyblock.perms.playerAddGroup("", p,
+					RunicSkyblock.perms.playerAddGroup(null, p,
 							"Scallywag");
-					RunicSkyblock.perms.playerRemoveGroup("", p,
+					RunicSkyblock.perms.playerRemoveGroup(null, p,
 							"Swabbie");
 					congratsPromotion(p.getDisplayName(), "Scallywag");
 					logPromotion(p.getName(), "Scallywag", new Date().getTime());
